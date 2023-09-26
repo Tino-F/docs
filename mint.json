@@ -1,17 +1,17 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "ETRNL VAULT",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/v-white.svg",
+    "light": "/logo/v-black.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#9563FF",
-    "light": "#AE87FF",
+    "primary": "#000000",
+    "light": "#FFFFFF",
     "dark": "#0D001D",
     "background": {
-      "dark": "#090014"
+      "dark": "#000000"
     },
     "anchors": {
       "from": "#FF7F57",
@@ -21,7 +21,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:support@etrnl.app"
     }
   ],
   "topbarCtaButton": {
@@ -36,47 +36,55 @@
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://discord.gg/FvNtx5ga8h"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://blog.etrnl.app"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": [
+			"introduction",
+			"nfc",
+			"ntag-424-dna"
+		]
     },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
+	{
+		"group": "Examples",
+		"pages": [
+			"example/quickstart"
+		  ]
+	  },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "pages": [
+		"api-reference/before-you-begin",
+		"api-reference/keys"
+	  ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Endpoints",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
-      ]
+		"api-reference/endpoints/verify-tag",
+		"api-reference/endpoints/url-groups/create"
+	  ]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
+    "twitter": "https://twitter.com/etrnlvault",
+	"instagram": "https://instagram.com/tinofileccia",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
+  },
+  "api": {
+	"baseUrl": "https://third-party.etrnl.app",
+	"auth": {
+		"method": "key"
+	}
   }
 }

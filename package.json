@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@mintlify/scraping": "^3.0.31",
+    "g": "^2.0.1"
+  }
+}

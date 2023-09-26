@@ -1,0 +1,29 @@
+---
+title: API Keys
+---
+
+We have 2 different keys that can be used to authenticate with our API.
+However, the private key has more access.
+
+## Creating your keys
+You can create your API keys by navigating to your organization's [API Settings](https://etrnl.app/settings/organization/api)
+(you must be an administrator to access this page) and clicking on the "GENERATE KEYS" button.
+
+<img src="/images/api-keys/generate-keys-btn.png"/>
+
+Once your keys have been generate, the page should look something like below.
+
+<img src="/images/api-keys/api-settings.png"/>
+
+You can click on refresh icon on the right to deactivate the existing public/private key and generate a new one.
+You can also click on the sliders on the left to enable/disable an API key.
+
+## Private Key
+The purpose of the private key is to perform CRUD operations on objects within an organization (Orders, ExternalURLGroups, Products, etc.).
+This key should never be used within frontend/client side code and should be stored somewhere secure.
+
+## Public Key
+<Warning>**It is strongly recommended that you perform authentication on the backend server and only use the private key.**</Warning>
+The public key only has access to the /v1/verifyTag route.
+However, in cases where you want to build an MVP and don't want to setup your own server, you can authenticate a tag on your website
+by using some fairly basic javascript.
