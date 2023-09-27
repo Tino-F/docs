@@ -1,0 +1,34 @@
+---
+title: Create
+api: 'POST /v1/orders'
+---
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## JSON Request Body
+<ParamField body="displayName" placeholder="John's Order" type="string">
+	This is the order's display name as it will appear in the programmer.
+</ParamField>
+
+<ResponseExample>
+```json
+{
+      success: true,
+      order: {
+        id: 17,
+        organizationId: 681,
+        productId: 91,
+        displayName: "John's order",
+        creationDate: "2023-09-26T23:19:42.000Z",
+        fulfilled: false,
+        fulfilledBy: null,
+        tagMetadata: { orderId: 123456 },
+        shippingLabelImgUrl: "https://example.com/johns-shipping-label.png",
+        fulfillmentDate: null
+      }
+    }
+```
+</ResponseExample>

@@ -2,30 +2,33 @@
 title: NTAG 424 DNA NFC Tags
 ---
 
-<video muted width="200" height="200" styles="background: white;">
-	<source src="/videos/url-changing.mov" type="video/mp4"/>
-</video>
+<Frame>
+	<video controls autoPlay muted loop width="400px">
+		<source src="/videos/url-changing.mp4" type="video/mp4"/>
+	</video>
+</Frame>
+
+<br/>
 
 # Overview
 Every time you tap your phone to one of these tags, you will get a different URL.
 The 424s have a unique feature called SUN (Secure Unique NDEF).
-This means that on every read, the tag will encrypt new information
-(how many times it has been tapped, the unique ID, and a nonce) and add this encrypted information to the URL,
+This means that on every read, the tag will encrypt new information and add this encrypted information to the URL,
 along with some other cryptographic data.
 
 ## How authenticity is verified (SUN)
 We use 4 parameters in the URL to verify a tag's authenticity.
 
-* **Tag ID** *(static)* - The ETRNL assigned ID of the tag
-* **E-Code** *(static)* -  A KDF input parameter used for key decryption on the server
-* **Encrypted Message** *(dynamic)* - An encrypted message containing the UID, counter, and nonce
-* **CMAC** *(dynamic)* - A mesasge authentication code that is used to verify the integrity of the encrypted data
+* **Tag ID** - The ETRNL assigned ID of the tag
+* **E-Code** -  A KDF input parameter used for key decryption on the server
+* **Encrypted Message** - An encrypted message containing the UID, counter, and nonce
+* **CMAC** - A mesasge authentication code that is used to verify the integrity of the encrypted data
 
-When this data makes it's way to the ETRNL servers, we decrypt the data to see how many times the tag has been tapped (the counter).
+When this data makes it's way to the ETRNL servers, we decrypt the data to see how many times the tag has been tapped and the UID of the tag.
 
 <Tabs>
 
-	<Tab title='Encrypted'>
+	<Tab title='Encrypted Message'>
 		**963352074FC3F2A3B94880BCA905FEF3**
 	</Tab>
 
