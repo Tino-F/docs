@@ -1,0 +1,32 @@
+---
+title: Get All
+api: 'GET /v1/url-groups'
+---
+
+Get all URL Groups within your organization.
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+<ResponseExample>
+```json Successfully retrieved URL Groups
+{
+	success: true,
+	err: '',
+	groups: [
+		{
+			id: 238,
+			appName: "ETRNL",
+			organizationId: 519,
+			creationDate: "2023-09-27 04:09:33.000000",
+			name: "Group Name",
+			customUrl: "https://example.com/authenticate/?tagId=%tagId%&eCode=%eCode%&enc=%enc%&cmac=%cmac%"
+		}
+	]
+}
+```
+</ResponseExample>

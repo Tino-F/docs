@@ -1,0 +1,34 @@
+---
+title: Get
+api: 'GET /url-groups/{id}'
+---
+
+Returns the URL Group specified by the ID.
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="URL Group ID" type="string" required>
+	The ID of the URL Group.
+</ParamField>
+
+<ResponseExample>
+```json Successfully retrieved the URL Group
+{
+	success: true,
+	err: '',
+	group: {
+		name: "Group Name",
+		appName: "ETRNL",
+        organizationId: 33,
+        creationDate: "2023-09-26T18:44:59.000Z",
+		customUrl: "https://example.com/{tagId}/?enc={enc}&cmac={cmac}&eCode={eCode}"
+	}
+}
+```
+</ResponseExample>

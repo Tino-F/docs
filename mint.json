@@ -14,8 +14,8 @@
       "dark": "#000000"
     },
     "anchors": {
-      "from": "#FF7F57",
-      "to": "#9563FF"
+      "from": "#303030",
+      "to": "#303030"
     }
   },
   "topbarLinks": [
@@ -69,16 +69,25 @@
 	  ]
     },
     {
-      "group": "Endpoints",
+      "group": "Tag",
       "pages": [
-		"api-reference/endpoints/verify-tag",
-		"api-reference/endpoints/url-groups/create"
+		"api-reference/endpoints/tag/verify-authenticity"
 	  ]
-    }
+    },
+	{
+		"group": "URL Groups",
+		"pages": [
+		  "api-reference/endpoints/url-groups/create",
+		  "api-reference/endpoints/url-groups/update",
+		  "api-reference/endpoints/url-groups/get",
+		  "api-reference/endpoints/url-groups/get-all",
+		  "api-reference/endpoints/url-groups/delete"
+		]
+	  }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/etrnlvault",
-	"instagram": "https://instagram.com/tinofileccia",
+	"instagram": "https://instagram.com/etrnlvault",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
   },
   "api": {

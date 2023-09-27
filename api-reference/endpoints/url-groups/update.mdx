@@ -1,0 +1,51 @@
+---
+title: Update
+api: 'PUT /v1/url-groups/{id}'
+---
+
+<Note>
+	If tags have been programmed to this URL, you cannot make changes to the customUrl value.
+	This would make deprogramming tags impossible as we wouldn't be able to accurately identify the [SUN](/ntag-424-dna#how-authenticity-is-verified-sun) parameters.
+</Note>
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="URL Group ID" type="string" required>
+	The ID of the URL Group.
+</ParamField>
+
+## JSON Request Body
+<ParamField body="customUrl" placeholder="My Website" type="string">
+	The custom URL definition that will be programmed into the tags.
+</ParamField>
+
+<ParamField body="name" placeholder="https://example.com/{tagId}/?enc={enc}&cmac={cmac}&eCode={eCode}" type="string">
+	The name of your custom URL group.
+</ParamField>
+
+<ParamField body="appName" placeholder="My Website" type="string">
+	This is the service that's used to add the custom URL.
+	The custom URL group will show up in the programmer as [APP Name] - Name.
+</ParamField>
+
+<ResponseExample>
+```json Updated Successfully
+{
+	success: true,
+	err: '',
+	group: {
+		name: "Updated Group Name",
+		appName: "ETRNL",
+        organizationId: 33,
+        creationDate: "2023-09-26T18:44:59.000Z",
+		customUrl: "https://example.com/{tagId}/?enc={enc}&cmac={cmac}&eCode={eCode}"
+	}
+}
+```
+</ResponseExample>

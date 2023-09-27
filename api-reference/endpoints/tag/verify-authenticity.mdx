@@ -1,11 +1,26 @@
 ---
 title: Verify Authenticity
-api: "POST /v1/verifyTag"
+api: "POST /v1/tag/verify-authenticity"
 ---
+
+<div>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<lottie-player
+	src="https://lottie.host/c404786e-2d84-4239-a092-5fa55366d5a7/DRPRrsgJH4.json"
+	background="transparent"
+	speed={1}
+	style={{ width: 300, height: 300 }}
+	direction={1}
+	mode="normal"
+	loop=""
+	controls=""
+	autoPlay=""
+	/>
+</div>
 
 <Note>You can use either the Public or Private API Key</Note>
 
-This endpoint can be used to test if the NFC generated data is authentic or inauthentic.
+This endpoint can be used to test if the NFC generated [SUN](/ntag-424-dna#how-authenticity-is-verified-sun) data is authentic or inauthentic.
 
 
 ## Error Messages
@@ -17,13 +32,14 @@ This endpoint can be used to test if the NFC generated data is authentic or inau
 - **inactive** - The tag has been marked as inactive in our database. This is probably a result of a tag that hasn't been completely programmed.
 - **unauthorized** - The tag does not belong to your organization.
 
-
 <br/>
 
+## Headers
 <ParamField header="API-Key" placeholder="Private or Public API Key" type="string" required>
-  Your organization's pulic/private API key.
+  Your organization's public/private API key.
 </ParamField>
 
+## JSON Request Body
 <ParamField body="tagId" type="number" placeholder="1" required>
   The ETRNL unique ID of the tag
 </ParamField>
@@ -47,16 +63,16 @@ This endpoint can be used to test if the NFC generated data is authentic or inau
 <ResponseExample>
 ```json Authenticated Successfully
 {
-	"success": true,
-	"exists": true,
-	"authentic": true,
-	"ctr": 12,
-	"uid": "04C148EAC37180",
-	"ttCurrStatus": null,
-	"ttPermStatus": null,
-	"err": null,
-	"lastAuthenticTimestamp": "2023-07-09T09:23:53.672Z",
-	"lastAuthenticCtr": 11
+	success: true,
+	err: null,
+	exists: true,
+	authentic: true,
+	ctr: 12,
+	uid: "04C148EAC37180",
+	ttCurrStatus: null,
+	ttPermStatus: null,
+	lastAuthenticTimestamp: "2023-07-09T09:23:53.672Z",
+	lastAuthenticCtr: 11
 }
 ```
 </ResponseExample>
