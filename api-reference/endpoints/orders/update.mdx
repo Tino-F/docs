@@ -1,15 +1,24 @@
 ---
-title: Create
-api: 'POST /v1/orders'
+title: Update
+api: 'PUT /v1/orders/{id}'
 ---
 
-Create a new order for a product
+Update an order by ID
 
 <br/>
+
+<Warning>
+You cannot update orders that have been fulfilled
+</Warning>
 
 ## Headers
 <ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
   Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="Order ID" type="string" required>
+	The ID of the Order.
 </ParamField>
 
 ## JSON Request Body
@@ -26,6 +35,7 @@ Create a new order for a product
 	This will allow you to print the shipping label directly from the programmer.
 </ParamField>
 
+
 <ResponseExample>
 ```json
 {
@@ -35,7 +45,7 @@ Create a new order for a product
         id: 17,
         organizationId: 681,
         productId: 91,
-        displayName: "John's order",
+        displayName: "John's updated order",
         creationDate: "2023-09-26T23:19:42.000Z",
         fulfilled: false,
         tagMetadata: { internalOrderId: 123456 },

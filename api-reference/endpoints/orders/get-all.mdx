@@ -1,0 +1,35 @@
+---
+title: Get All
+api: 'GET /v1/orders'
+---
+
+Get all orders within an organization
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+<ResponseExample>
+```json
+{
+      success: true,
+	  err: '',
+      orders: [
+		{
+			id: 17,
+			organizationId: 681,
+			productId: 91,
+			displayName: "John's order",
+			creationDate: "2023-09-26T23:19:42.000Z",
+			fulfilled: false,
+			tagMetadata: { internalOrderId: 123456 },
+			shippingLabelImgUrl: "https://example.com/johns-shipping-label.png",
+			fulfillmentDate: null
+		}
+	  ]
+    }
+```
+</ResponseExample>

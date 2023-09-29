@@ -52,7 +52,8 @@
       "pages": [
 			"introduction",
 			"nfc",
-			"ntag-424-dna"
+			"ntag-424-dna",
+			"product-personalization"
 		]
     },
 	{
@@ -87,7 +88,12 @@
 	  {
 		"group": "Orders",
 		"pages": [
-		  "api-reference/endpoints/orders/create"
+			"api-reference/endpoints/orders/create",
+			"api-reference/endpoints/orders/get-all",
+			"api-reference/endpoints/orders/get-all-unfulfilled",
+			"api-reference/endpoints/orders/get-all-fulfilled",
+			"api-reference/endpoints/orders/update",
+			"api-reference/endpoints/orders/delete"
 		]
 	  }
   ],
