@@ -1,0 +1,47 @@
+---
+title: Create metadata queue item
+api: 'POST /v1/url-groups/{id}/queue'
+---
+
+Add an item to this URL group's metadata queue.
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="URL Group ID" type="string" required>
+	The ID of the URL Group.
+</ParamField>
+
+## Body
+<ParamField body="displayName" placeholder="John's NFT" type="string">
+	This is the queue item's display name as it will appear in the programmer.
+</ParamField>
+
+<ParamField body="tagMetadata" placeholder="{ nftId: 123 }" type="string">
+	This is a JSON object that defines additional information that will be tied to the tag that's programmed for this queue item.
+</ParamField>
+
+<ResponseExample>
+```json
+{
+	success: true,
+	queueItem: {
+		id: 399,
+		tagMetadata: {
+			nftId: 123
+		},
+		displayName: "John's NFT data",
+		pageId: null,
+		groupId: 190,
+		organizationId: 1275,
+		fulfillmentDate: null,
+		fulfilled: false
+	}
+}
+```
+</ResponseExample>

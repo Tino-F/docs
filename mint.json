@@ -84,24 +84,18 @@
 			"api-reference/endpoints/url-groups/update",
 			"api-reference/endpoints/url-groups/get",
 			"api-reference/endpoints/url-groups/get-all",
-			"api-reference/endpoints/url-groups/delete"
+			"api-reference/endpoints/url-groups/delete",
+			"api-reference/endpoints/url-groups/create-queue-item",
+			"api-reference/endpoints/url-groups/get-fulfilled-queue-items",
+			"api-reference/endpoints/url-groups/get-unfulfilled-queue-items"
 		]
 	},
 	{
-		"group": "Products",
+		"group": "Metadata Queue Item",
 		"pages": [
-			"api-reference/endpoints/products/create"
-		]
-	},
-	{
-		"group": "Orders",
-		"pages": [
-			"api-reference/endpoints/orders/create",
-			"api-reference/endpoints/orders/get-all",
-			"api-reference/endpoints/orders/get-all-unfulfilled",
-			"api-reference/endpoints/orders/get-all-fulfilled",
-			"api-reference/endpoints/orders/update",
-			"api-reference/endpoints/orders/delete"
+			"api-reference/endpoints/metadata-queue/get",
+			"api-reference/endpoints/metadata-queue/update",
+			"api-reference/endpoints/metadata-queue/delete"
 		]
 	}
   ],

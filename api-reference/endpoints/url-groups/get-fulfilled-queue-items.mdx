@@ -1,0 +1,41 @@
+---
+title: Get fulfilled queue items
+api: 'GET /v1/url-groups/{id}/queue/fulfilled'
+---
+
+Returns all fulfilled queue items by the URL group ID.
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="URL Group ID" type="string" required>
+	The ID of the URL Group.
+</ParamField>
+
+<ResponseExample>
+```json Successfully retrieved the URL Group
+{
+		success: true,
+		queue: [
+			{
+				id: 399,
+				tagMetadata: {
+					nftId: 123
+				},
+				displayName: "John's NFT data",
+				pageId: null,
+				groupId: 190,
+				organizationId: 1275,
+				fulfillmentDate: '2023-11-01T00:41:23.000Z',
+				fulfilled: true,
+				creationDate: '2023-10-31T00:41:23.000Z'
+			}
+		]
+    }
+```
+</ResponseExample>

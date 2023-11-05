@@ -1,0 +1,48 @@
+---
+title: Update
+api: 'PUT /v1/queue-item/{id}'
+---
+
+Update a metadata queue item by ID.
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="Queue Item ID" type="string" required>
+	The ID of the queue item.
+</ParamField>
+
+## Body
+<ParamField body="displayName" placeholder="John's NFT" type="string">
+	This is the queue item's display name as it will appear in the programmer.
+</ParamField>
+
+<ParamField body="tagMetadata" placeholder="{ nftId: 123 }" type="string">
+	This is a JSON object that defines additional information that will be tied to the tag that's programmed for this queue item.
+</ParamField>
+
+<ResponseExample>
+```json
+{
+	success: true,
+	queueItem: {
+		id: 399,
+		tagMetadata: {
+			nftId: 123
+		},
+		displayName: "John's NFT data",
+		pageId: null,
+		groupId: 190,
+		organizationId: 1275,
+		fulfillmentDate: null,
+		fulfilled: false,
+		creationDate: '2023-10-31T00:41:23.000Z'
+	}
+}
+```
+</ResponseExample>

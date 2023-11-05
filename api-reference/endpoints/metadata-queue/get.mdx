@@ -1,0 +1,39 @@
+---
+title: Get
+api: 'GET /v1/queue-item/{id}'
+---
+
+Get a metadata queue item by ID.
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="Queue Item ID" type="string" required>
+	The ID of the queue item.
+</ParamField>
+
+<ResponseExample>
+```json
+{
+	success: true,
+	queueItem: {
+		id: 399,
+		tagMetadata: {
+			nftId: 123
+		},
+		displayName: "John's NFT data",
+		pageId: null,
+		groupId: 190,
+		organizationId: 1275,
+		fulfillmentDate: null,
+		fulfilled: false,
+		creationDate: '2023-10-31T00:41:23.000Z'
+	}
+}
+```
+</ResponseExample>

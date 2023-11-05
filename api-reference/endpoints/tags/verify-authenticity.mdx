@@ -60,7 +60,7 @@ This endpoint can be used to test if the NFC generated [SUN](/ntag-424-dna#how-a
   A KDF input parameter used for key decyrption
 </ParamField>
 
-<ResponseExample>
+{/** <ResponseExample>
 ```json Authenticated Successfully
 {
 	success: true,
@@ -89,6 +89,26 @@ This endpoint can be used to test if the NFC generated [SUN](/ntag-424-dna#how-a
         GTIN: '1234567891011',
         UPC: '110987654321',
         SKU: 'XYZ12345'
+	}
+}
+```
+</ResponseExample> **/}
+
+<ResponseExample>
+```json Authenticated Successfully
+{
+	success: true,
+	err: null,
+	exists: true,
+	authentic: true,
+	ctr: 12,
+	uid: "04C148EAC37180",
+	ttCurrStatus: null,
+	ttPermStatus: null,
+	lastAuthenticTimestamp: "2023-07-09T09:23:53.672Z",
+	lastAuthenticCtr: 11,
+	metadata: {
+		nftId: 'xxxxxxx'
 	}
 }
 ```
