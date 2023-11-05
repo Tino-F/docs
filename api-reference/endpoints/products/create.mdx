@@ -1,0 +1,31 @@
+---
+title: Create
+api: 'POST /v1/products'
+---
+
+Create a new product
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+<RespnoseExample>
+```json
+{
+	id: 177,
+	organizationId: 858,
+	pageId: null,
+	groupId: 567,
+	name: 'Generic Granite Ball',
+	description: 'New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart',
+	attrs: null,
+	imgs: null,
+	ASIN: 46193419425,
+	EAN: null,
+	GTIN: 507932300991725,
+	UPC: 4172115352703,
+	SKU: 'tdTdm2PXHgz9PVZutEQhbJVKuISgl0T7T4lqLg1kKUfiQ'
+}
+```
+</ResponseExample>

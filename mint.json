@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "ETRNL VAULT",
   "logo": {
-    "dark": "/logo/v-white.svg",
-    "light": "/logo/v-black.svg"
+    "dark": "/logo/text-white.svg",
+    "light": "/logo/text-black.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
@@ -18,15 +18,9 @@
       "to": "#303030"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:support@etrnl.app"
-    }
-  ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://etrnl.app"
   },
   "tabs": [
     {
@@ -51,41 +45,55 @@
       "group": "Get Started",
       "pages": [
 			"introduction",
-			"nfc",
-			"ntag-424-dna",
-			"product-personalization"
+			"advanced-page-customization"
 		]
     },
 	{
 		"group": "Examples",
 		"pages": [
-			"example/quickstart"
-		  ]
-	  },
+			"example/quickstart",
+			"example/custom-url-authentication",
+			"example/product-personalization"
+		]
+	},
+	{
+		"group": "NFC Resources",
+		"pages": [
+			"knowledge/nfc",
+			"knowledge/ndef",
+			"knowledge/ntag-424-dna"
+		]
+	},
     {
-      "group": "API Documentation",
-      "pages": [
-		"api-reference/before-you-begin",
-		"api-reference/keys"
-	  ]
+		"group": "API Documentation",
+		"pages": [
+			"api-reference/before-you-begin",
+			"api-reference/keys"
+		]
     },
     {
-      "group": "Tags",
-      "pages": [
-		"api-reference/endpoints/tags/verify-authenticity"
-	  ]
+		"group": "Tags",
+		"pages": [
+			"api-reference/endpoints/tags/verify-authenticity"
+		]
     },
 	{
 		"group": "URL Groups",
 		"pages": [
-		  "api-reference/endpoints/url-groups/create",
-		  "api-reference/endpoints/url-groups/update",
-		  "api-reference/endpoints/url-groups/get",
-		  "api-reference/endpoints/url-groups/get-all",
-		  "api-reference/endpoints/url-groups/delete"
+			"api-reference/endpoints/url-groups/create",
+			"api-reference/endpoints/url-groups/update",
+			"api-reference/endpoints/url-groups/get",
+			"api-reference/endpoints/url-groups/get-all",
+			"api-reference/endpoints/url-groups/delete"
 		]
-	  },
-	  {
+	},
+	{
+		"group": "Products",
+		"pages": [
+			"api-reference/endpoints/products/create"
+		]
+	},
+	{
 		"group": "Orders",
 		"pages": [
 			"api-reference/endpoints/orders/create",
@@ -95,7 +103,7 @@
 			"api-reference/endpoints/orders/update",
 			"api-reference/endpoints/orders/delete"
 		]
-	  }
+	}
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/etrnlvault",

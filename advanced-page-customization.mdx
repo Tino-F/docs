@@ -1,0 +1,56 @@
+---
+title: Advanced Page Customization
+---
+Secure pages not only support HTML/Markdown, but also supports <a href="https://handlebarsjs.com/" target="_blank">handlebars</a>
+syntax to inject dynamic variables and add custom logic.
+
+## Dynamic variables
+Dynamic variables can be used within your custom page to display additional data to your users.
+They can also be used to add custom logic on your pages to show/hide content.
+
+### Displaying the variables
+Wrapping the variable within 2 opening & closing curly brackets will display the variable.
+
+If you copy/paste the following code into the details section of your page, it will display the number of tags that have been programmed to that page.
+```handlebars
+<b>Tag count:</b> {{ page.totalTagCount }}
+```
+
+<Frame>
+	<img src='/images/screenshots/tagCount-handlbars-example.png'/>
+</Frame>
+<Note>In the editor, it will show <b>XXX</b> as a placeholder for this variable, but tapping the tag will show the actual value</Note>
+
+### Conditionally displaying content
+Content can be displayed conditionally by using the variables within a handlebars if/else statements.
+Let's say you wanted to show a video to the user if they own one of your products.
+
+You details would look something like this:
+```handlebars
+{{ }}
+```
+
+
+### Available variables
+| Variable               | Description                                                                       |
+|------------------------|-----------------------------------------------------------------------------------|
+| authentic              | The authenticity of the URL                                                       |
+| errCode                | The reason why the URL is inauthentic                                             |
+| ttCurrStatus           | The current tamper status of the tag                                              |
+| ttPermStatus           | The permanent tamper status of the tag                                            |
+| organization.name      | The name of your organization                                                     |
+| organization.instagram | The instagram account of your organization                                        |
+| organization.website   | The website URL of your organization                                              |
+| page.name              | The specified name of the page                                                    |
+| page.creationDay       | The numbered day that the page was created                                        |
+| page.creationMonth     | The numbered month that the page was created                                      |
+| page.creationYear      | The year that the page was created                                                |
+| page.totalTagCount     | The number of tags that have been programmed for the current page                 |
+| tag.id                 | The tag's ETRNL id                                                                |
+| tag.uid                | The tag's UID                                                                     |
+| tag.creationDay        | The numbered day that the tag was created                                         |
+| tag.creationMonth      | The numbered month that the tag was created                                       |
+| tag.creationYear       | The year the the tag was created                                                  |
+| tag.counter            | Represents how many times the tag was tapped at the time that the URL was created |
+| tag.enc                | The URL's dynamic encrypted message                                               |
+| tag.cmac               | The URL's dynamic CMAC                                                            |
