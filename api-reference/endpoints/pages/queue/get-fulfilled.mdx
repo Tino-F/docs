@@ -1,0 +1,41 @@
+---
+title: Get fulfilled queue items
+api: 'GET /v1/pages/{id}/queue/fulfilled'
+---
+
+Returns all fulfilled queue items by the page ID.
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="Page ID" type="string" required>
+	The ID of the secure page.
+</ParamField>
+
+<ResponseExample>
+```json
+{
+	success: true,
+	queue: [
+		{
+			id: 200,
+			tagMetadata: {
+				nftId: 123
+			},
+			displayName: "John's NFT data",
+			pageId: 191,
+			groupId: null,
+			organizationId: 1275,
+			fulfillmentDate: '2023-11-01T00:41:23.000Z',
+			fulfilled: true,
+			creationDate: '2023-10-31T00:41:23.000Z'
+		}
+	]
+}
+```
+</ResponseExample>

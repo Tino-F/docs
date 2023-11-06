@@ -85,9 +85,17 @@
 			"api-reference/endpoints/url-groups/get",
 			"api-reference/endpoints/url-groups/get-all",
 			"api-reference/endpoints/url-groups/delete",
-			"api-reference/endpoints/url-groups/create-queue-item",
-			"api-reference/endpoints/url-groups/get-fulfilled-queue-items",
-			"api-reference/endpoints/url-groups/get-unfulfilled-queue-items"
+			"api-reference/endpoints/url-groups/queue/create",
+			"api-reference/endpoints/url-groups/queue/get-fulfilled",
+			"api-reference/endpoints/url-groups/queue/get-unfulfilled"
+		]
+	},
+	{
+		"group": "Pages",
+		"pages": [
+			"api-reference/endpoints/pages/queue/create",
+			"api-reference/endpoints/pages/queue/get-fulfilled",
+			"api-reference/endpoints/pages/queue/get-unfulfilled"
 		]
 	},
 	{

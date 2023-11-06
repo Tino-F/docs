@@ -1,0 +1,41 @@
+---
+title: Get unfulfilled queue items
+api: 'GET /v1/pages/{id}/queue/unfulfilled'
+---
+
+Returns all unfulfilled queue items by the page ID.
+
+<br/>
+
+## Headers
+<ParamField header="API-Key" placeholder="Your Private API Key" type="string" required>
+  Your organization's private API key.
+</ParamField>
+
+## URL Params
+<ParamField path="id" placeholder="Page ID" type="string" required>
+	The ID of the secure page.
+</ParamField>
+
+<ResponseExample>
+```json
+{
+		success: true,
+		queue: [
+			{
+				id: 405,
+				creationDate: '2023-10-31 09:43:06.000000',
+				tagMetadata: [Object],
+				displayName: 'My Test',
+				pageId: 192,
+				groupId: null,
+				organizationId: 1277,
+				fulfillmentDate: null,
+				fulfilledBy: null,
+				injectableUrlData: null,
+				fulfilled: false
+			}
+		]
+    }
+```
+</ResponseExample>
