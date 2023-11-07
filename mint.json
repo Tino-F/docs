@@ -44,15 +44,15 @@
     {
       "group": "Get Started",
       "pages": [
-			"introduction",
-			"advanced-page-customization"
+			"introduction"
 		]
     },
 	{
 		"group": "Examples",
 		"pages": [
 			"example/quickstart",
-			"example/custom-url-authentication",
+			"example/advanced-page-customization",
+			"example/nfc-authentication-in-your-own-app",
 			"example/product-personalization"
 		]
 	},

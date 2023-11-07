@@ -8,7 +8,7 @@ syntax to inject dynamic variables and add custom logic.
 Dynamic variables can be used within your custom page to display additional data to your users.
 They can also be used to add custom logic on your pages to show/hide content.
 
-### Displaying the variables
+### Hiding content
 Wrapping the variable within 2 opening & closing curly brackets will display the variable.
 
 If you copy/paste the following code into the details section of your page, it will display the number of tags that have been programmed to that page.
@@ -26,10 +26,26 @@ Content can be displayed conditionally by using the variables within a handlebar
 Let's say you wanted to show a video to the user if they own one of your products.
 
 You details would look something like this:
-```handlebars
-{{ }}
-```
+```html
+{{#if authentic}}
 
+<iframe
+	width="100%"
+	height="315"
+	src="https://www.youtube.com/embed/QH2-TGUlwu4?si=p5Zuwpd_8ZqEtozO"
+	title="YouTube video player"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+	allowfullscreen
+/>
+
+{{else}}
+
+<p>:(</p>
+
+{{/if}}
+```
+You can copy/paste the above code into your page's details and it would hide the video if the tag is inauthentic.
 
 ### Available variables
 | Variable               | Description                                                                       |

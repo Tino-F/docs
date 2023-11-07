@@ -13,7 +13,7 @@ This guide will explain how to create a secure page and start authenticating you
 - <a target='_blank' href='https://etrnl.app/shop'>An NTAG 424 DNA Tag</a>
 - <a target='_blank' href='https://a.co/d/1b9dBYK'>An NFC reader/writer</a>
 
-## Steps
+### Steps
 <Steps>
   <Step title="Create a page"/>
   <Step title="Customize your page"/>
@@ -40,8 +40,10 @@ You will see a prompt where you can type the name of the secure page.
 This will typically be the name of the product you're going to be authenticating.
 Once you're done, click the <b>SUBMIT</b> button, or press enter.
 <Frame>
-	<img src='/images/screenshots/create-a-secure-page.png' alt='Create a secure page UI'/>
+	<img src='/images/quickstart/create-page.gif' alt='Create a secure page UI'/>
 </Frame>
+
+<br/>
 
 ## Customizing your page
 <Note>
@@ -53,3 +55,31 @@ Click on the <b>Content</b> dropdown in the left sidebar and upload an image of 
 
 Once you have an image uploaded, write a sentence or 2 about your product in the <b>Details</b> textbox.
 Now just click the <b>SAVE</b> button in the bottom right and you're done!
+
+<Frame>
+	<img src='/images/quickstart/customize-page.gif' alt='Customize your secured page'/>
+</Frame>
+
+## Program your tag(s)
+<a href='https://etrnl.app/download' target='_blank'>Download</a> the programmer and connect your NFC reader/writer.
+Once you've signed in, make sure the page you just created is selected in the dropdown, and put the programmer in <b>PROGRAM</b> mode.
+Now you can just hold your NTAG 424 DNA Tag to the reader until you get the <b>Success</b> message.
+If you get any error message along the way, put the programmer in <b>DEPROGRAM</b> mode, deprogram the tag, and then try programming it again.
+<Frame>
+	<img src='/images/quickstart/program-tag.gif' alt='ETRNL NTAG 424 DNA Programmer'/>
+</Frame>
+
+## Try it out!
+Tap your phone to your tag, and now you should see the authentic animation when you tap the tag, and an inauthentic message when you refresh the page or try visiting the URL again.
+
+### IPhone
+On IPhone the NFC reader is at the top of the phone.
+If you're having trouble reading the tag, unlock the phone and unlock it while the tag is touching the top of the phone.
+<Note>
+Based on our testing, IPhones don't poll for NFC tags frequently.
+However, immediately after unlocking your IPhone, it will emmit the strongest frequencies to communicate with nearby NFC tags.
+</Note>
+
+### Android
+Android phones typically have NFC readers on the back, center of the device.
+However, you may need to enable NFC in your phone's settings.
