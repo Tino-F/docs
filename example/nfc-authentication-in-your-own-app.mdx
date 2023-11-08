@@ -1,10 +1,25 @@
 ---
-title: NFC Authentication in your own app
+title: NFC Authentication in your own App
 ---
 
 ETRNL was built with integration in mind.
-Our developer friendly API allows you to enable secure NFC authentication within your own website or installable app.
+We want you to build the best, and most engaging experiences for your users without having to worry about security or management of these tags.
+Our developer friendly API allows you to do this, and get up and running quickly.
 
+## Defining your URL
+In order to program the tag for your website/app, we first need to know what the URL should be, and where the dynamic parameters should exist in the URL.
+The easiest way to do this would be to create a secure page and enable the custom URL feature in the advanced settings.
+From there, you can edit your base URL, enable tag tamper detection, and move the 4 required parameters in the query param or slug of your choice.
+
+<Frame>
+	<img src='/images/external-authentication/secure-page-custom-url.gif' alt='Secure Page Custom URL'/>
+</Frame>
+
+<Note>
+If you're building an ios/android app, you will need to setup deep linking.
+</Note>
+
+{/**
 <Steps>
 
 	<Step title='Define your URL & NFC Params'>
@@ -16,3 +31,56 @@ Our developer friendly API allows you to enable secure NFC authentication within
 	</Step>
 
 </Steps>
+**/}
+
+## Programming Tags
+You would program tags the same way that your normally would.
+Just select the page with the custom URL, put it in <b>PROGRAM</b> mode, and hold the tag to the reader until you see the <b>SUCCESS</b> message.
+You can confirm that the tag was programmed to the correct URL by putting the program in <b>READ</b> mode and reading the URL from the tag.
+
+## Authenticating from your website/app
+Now that you have your URL configured and a tag programmed, you can start implementing authentication on your website.
+There are 2 ways that you can do this.
+You can either authenticate using client-side code (less secure), or you can authenticate from the backend (recommended).
+The only difference is that <b>when you want to authenticate on the client, you should use the public API key, and when you want to authenticate on the backend, you can use the private API key.</b>
+<Warning>
+Never use the private API key in client side code, only the public key.
+</Warning>
+
+### Getting the data from the URL
+For this example, we'll be using javascript, but the concepts are the same across languages.
+```js
+const url = new URL( window.location );
+
+// Tag ID was defined as the 1st slug in this example
+const tagId = url.pathname.split('/')[1];
+const eCode = url.searchParams.get('eCode');
+const enc = url.searchParams.get('enc');
+const cmac = url.searchParams.get('cmac');
+```
+
+### Sending the data to the API
+Documentation for the API can be found <a href='/api-reference/endpoints/tags/verify-authenticity'>here.</a>
+
+```js
+const res = await fetch(
+	'https://third-party.etrnl.app/v1/tag/verify-authenticity',
+	{
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'API-KEY': 'XXXXXXX' // Your API key goes here
+		},
+		body: JSON.stringify({ tagId, eCode, enc, cmac })
+	}
+);
+
+const {
+	success, // boolean
+	exists, // boolean
+	authentic, // boolean
+	ctr, // number
+	uid, // string (only provided if using the private key)
+	err // error code
+} = await res.json();
+```

@@ -52,16 +52,16 @@
 		"pages": [
 			"example/quickstart",
 			"example/advanced-page-customization",
-			"example/nfc-authentication-in-your-own-app",
-			"example/product-personalization"
+			"example/nfc-authentication-in-your-own-app"
 		]
 	},
 	{
-		"group": "NFC Resources",
+		"group": "NFC",
 		"pages": [
-			"knowledge/nfc",
-			"knowledge/ndef",
-			"knowledge/ntag-424-dna"
+			"nfc-resources/nfc",
+			"nfc-resources/nfc-tag",
+			"nfc-resources/ndef",
+			"nfc-resources/ntag-424-dna-nfc-tag"
 		]
 	},
     {
