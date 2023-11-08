@@ -67,8 +67,8 @@
     {
 		"group": "API Documentation",
 		"pages": [
-			"api-reference/before-you-begin",
-			"api-reference/keys"
+			"api-reference/keys",
+			"api-reference/rules"
 		]
     },
     {
@@ -117,5 +117,10 @@
 	"auth": {
 		"method": "key"
 	}
-  }
+  },
+  "analytics": {
+		"ga4": {
+			"measurementId": "G-XXXXXXX"
+		}
+	}	
 }
