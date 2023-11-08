@@ -121,6 +121,10 @@
   "analytics": {
 		"ga4": {
 			"measurementId": "G-XXXXXXX"
+		},
+		"hotjar": {
+			"hjid": "3727614",
+			"hjsv": "6"
 		}
 	}	
 }
