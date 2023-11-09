@@ -44,7 +44,8 @@
     {
       "group": "Get Started",
       "pages": [
-			"introduction"
+			"introduction",
+			"nfc-resources/ntag-424-dna-nfc-tag"
 		]
     },
 	{
@@ -60,8 +61,7 @@
 		"pages": [
 			"nfc-resources/nfc",
 			"nfc-resources/nfc-tag",
-			"nfc-resources/ndef",
-			"nfc-resources/ntag-424-dna-nfc-tag"
+			"nfc-resources/ndef"
 		]
 	},
     {
