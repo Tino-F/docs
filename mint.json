@@ -53,7 +53,8 @@
 		"pages": [
 			"example/quickstart",
 			"example/advanced-page-customization",
-			"example/nfc-authentication-in-your-own-app"
+			"example/nfc-authentication-in-your-own-app",
+			"example/external-url-group"
 		]
 	},
 	{
