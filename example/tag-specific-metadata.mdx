@@ -1,10 +1,18 @@
 ---
 title: Tag specific metadata
 ---
-
-## Overview
+<Frame>
+	<img
+		src='/images/gifs/metadata-queue-example.gif'
+		alt='metadata programming example'
+	/>
+</Frame>
 Every customer is unique, so we want to give businesses the ability to tailor their customers' experiences on an individual product level.
 With our metadata queueing system, you can personalize your customers' experiences very quickly, and at scale.
+
+## Overview
+Let's say that you want to display the name of the original buyer on your product's authentication page.
+You can easily do this without having to create a new page for each customer by assiging custom metadata to the tag.
 
 <Steps>
   <Step title="Configure your page or URL group"/>
@@ -12,10 +20,83 @@ With our metadata queueing system, you can personalize your customers' experienc
   <Step title="Program metadata into your tags"/>
 </Steps>
 
-## Configure your page or URL group
-You must start by configuring a page or URL group to represent your product.
+## Configure your page
+You must start by configuring a page to represent your product.
+For this example, we'll just modify the Invisible T-Shirt page that was created in the <a href='/example/quickstart'>Quickstart</a>.
 
-## Queue metadata for your tags
-There are queue items 
+### Displaying the Metadata
+The metadata can be displayed by adding a custom handlebars variable to your page's description.
+The metadata is stored as a key value pair (JSON object), so you can access the key on the secure page like `{{ tag.metadata.yourKeyNameHere }}`.
+For this example, we will be using the key **owner**.
 
-## Program metadata into your tags
+Update your page details with the below HTML/handlebars code:
+```html
+<h2>Owned By:</h2>
+<p>{{ tag.metadata.owner }}</p>
+```
+
+<Frame>
+	<img
+		src='/images/screenshots/pagebuilder-owner-setup.png'
+		alt='Metadata queue setup'
+	/>
+</Frame>
+<Note>
+Nothing is displayed as the owner in the page editor because we have no way of knowing what information will be passed through the metadata until it is defined on the tag itself. 
+</Note>
+
+
+## Create queue metadata for your tags
+In an ideal system, your POS would call the "create metadata queue" API endpoint for the corresponding <a href="http://localhost:3000/api-reference/endpoints/pages/queue/create" target="_blank">page</a> or <a href="http://localhost:3000/api-reference/endpoints/url-groups/queue/create" target="_blank">URL group</a>, and populate the queue items automatically.
+For this example we will add them manually.
+
+You can do this by clicking on the "use queue" toggle button and clicking the "Create metadata Queue item" button.
+Now we can type in the key **owner** and give it a value.
+We can create multiple queue items to specify different owners.
+Make sure to click **SAVE** when you're finished editing the values.
+<Frame>
+	<img
+		src='/images/gifs/add-queue-items.gif'
+		alt='Metadata queue setup'
+	/>
+</Frame>
+
+
+## Program tags with your metadata
+The queue must be enabled, and you must have a queue item selected in order to program tags to queue items.
+Once you program a tag, the programmer will remove the item from the queue and select the next available queue item for programming.
+It will continue to select the available queue items until all have been programmed.
+
+<Frame>
+	<video
+		src='https://storage.googleapis.com/eternity-cdn-bucket-dev/prod/videos/programming-tags-for-queue.mp4'
+		autoPlay
+		loop
+		controls={false}
+	/>
+</Frame>
+<Note>
+If a tag is deprogrammed, the queue item will be placed back into the queue
+</Note>
+
+## Testing
+Now you should be able to read the tag and see their owners.
+
+<Frame>
+	<video
+		src='https://storage.googleapis.com/eternity-cdn-bucket-dev/prod/videos/metadata-client-demo-screenrecording.mp4'
+		autoPlay
+		loop
+		style={{ padding: '0 30%' }}
+		controls={false}
+	/>
+</Frame>
+
+### Verifying metadata in the programmer
+You can also read the tag in the programmer to confirm that the metadata was assigned correctly
+<Frame>
+	<img
+		src='/images/gifs/read-tag-metadata.gif'
+		alt='Read nfc tag metadata'
+	/>
+</Frame>

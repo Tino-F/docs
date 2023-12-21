@@ -3,7 +3,8 @@
   "name": "ETRNL VAULT",
   "logo": {
     "dark": "/logo/text-white.svg",
-    "light": "/logo/text-black.svg"
+    "light": "/logo/text-black.svg",
+		"href": "https://etrnl.app"
   },
   "favicon": "/favicon.png",
   "colors": {
@@ -54,7 +55,8 @@
 			"example/quickstart",
 			"example/advanced-page-customization",
 			"example/nfc-authentication-in-your-own-app",
-			"example/external-url-group"
+			"example/external-url-group",
+			"example/tag-specific-metadata"
 		]
 	},
 	{
