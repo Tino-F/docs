@@ -14,12 +14,6 @@ With our metadata queueing system, you can personalize your customers' experienc
 Let's say that you want to display the name of the original buyer on your product's authentication page.
 You can easily do this without having to create a new page for each customer by assiging custom metadata to the tag.
 
-<Steps>
-  <Step title="Configure your page or URL group"/>
-  <Step title="Queue metadata for your tags"/>
-  <Step title="Program metadata into your tags"/>
-</Steps>
-
 ## Configure your page
 You must start by configuring a page to represent your product.
 For this example, we'll just modify the Invisible T-Shirt page that was created in the <a href='/example/quickstart'>Quickstart</a>.
@@ -46,9 +40,9 @@ Nothing is displayed as the owner in the page editor because we have no way of k
 </Note>
 
 
-## Create queue metadata for your tags
+## Queue metadata for your tags
 In an ideal system, your POS would call the "create metadata queue" API endpoint for the corresponding <a href="http://localhost:3000/api-reference/endpoints/pages/queue/create" target="_blank">page</a> or <a href="http://localhost:3000/api-reference/endpoints/url-groups/queue/create" target="_blank">URL group</a>, and populate the queue items automatically.
-For this example we will add them manually.
+However, for this example we will add them manually.
 
 You can do this by clicking on the "use queue" toggle button and clicking the "Create metadata Queue item" button.
 Now we can type in the key **owner** and give it a value.
@@ -100,3 +94,9 @@ You can also read the tag in the programmer to confirm that the metadata was ass
 		alt='Read nfc tag metadata'
 	/>
 </Frame>
+
+
+## API Disclaimer
+Whenever you verify a tag using the <a href="/api-reference/endpoints/tags/verify-authenticity">Verify Authenticity</a> API endpoint, it will return a `metadata` attribute with the data you specified.
+Please note that our <a href="/api-reference/rules">rules</a> state that storing of personal information within a tag's metadata is not allowed.
+This excludes unique identifiers to records within your own servers.
